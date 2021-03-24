@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: schedule-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-center
+      profile: dev
+      fail-fast: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:30000/eureka/
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  returnPageInfo: check
